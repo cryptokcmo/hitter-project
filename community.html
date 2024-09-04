@@ -14,6 +14,7 @@
             background: #f0f0f0;
             background-image: url('https://www.transparenttextures.com/patterns/halftone.png');
         }
+
         .container {
             width: 100%;
             max-width: 800px;
@@ -22,6 +23,34 @@
             padding: 20px;
             position: relative;
         }
+
+        /* Back tab similar to community tab */
+        .back-tab {
+            position: absolute;
+            top: -15px;
+            right: 25px;
+            width: 150px;
+            height: 40px;
+            background-color: #FFD700;
+            color: #000;
+            border: 5px solid #000;
+            border-bottom: none;
+            border-radius: 10px 10px 0 0;
+            font-size: 18px;
+            line-height: 40px;
+            box-shadow: 5px 5px #000;
+            z-index: 1;
+            text-align: center;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .back-tab:hover {
+            background-color: #FFC107;
+            transform: translate(-5px, -5px);
+            box-shadow: 10px 10px #000;
+        }
+
         .section {
             padding: 50px 0;
             border: 5px solid #000;
@@ -30,10 +59,12 @@
             box-shadow: 10px 10px #000;
             position: relative;
         }
+
         h2 {
             font-size: 36px;
             text-shadow: 3px 3px #FF6347;
         }
+
         .btn {
             display: inline-block;
             width: 200px;
@@ -47,34 +78,50 @@
             text-shadow: 2px 2px #000;
             box-shadow: 5px 5px #000;
         }
+
         .btn-telegram {
             background-color: #0088cc;
             color: #fff;
         }
+
         .btn-telegram:hover {
             background-color: #0077b6;
             transform: translate(-5px, -5px);
             box-shadow: 10px 10px #000;
         }
+
         .btn-x {
-            background-color: #1da1f2;
+            background-color: #000000;
             color: #fff;
+            position: relative;
         }
+
         .btn-x:hover {
-            background-color: #0d95e8;
+            background-color: #ffffff;
+            color: #000;
             transform: translate(-5px, -5px);
             box-shadow: 10px 10px #000;
+        }
+
+        /* Text hover effect within the X button */
+        .btn-x:hover::after {
+            content: '';
+            color: #000;
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
     <div class="container">
+        <!-- Back Tab -->
+        <div class="back-tab" onclick="window.location.href='index.html'">Back</div>
+
         <!-- Community Section -->
         <div class="section">
             <h2>Join Our Community!</h2>
             <p>Stay connected on Telegram and X for the latest updates!</p>
             <a href="https://t.me/yourtelegram" class="btn btn-telegram">Telegram</a>
-            <a href="https://twitter.com/yourx" class="btn btn-x">X (formerly Twitter)</a>
+            <a href="https://twitter.com/yourx" class="btn btn-x">X </a>
         </div>
     </div>
 </body>
